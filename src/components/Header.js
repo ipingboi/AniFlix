@@ -23,7 +23,7 @@ export const Header = () => {
         data-bs-target="#offcanvasScrolling"
         aria-controls="offcanvasScrolling"
       >
-        <img src={Ham} alt="" width={30} />
+        <i className="bi bi-list" />
       </button>
       <div
         className="offcanvas offcanvas-start bg-dark"
