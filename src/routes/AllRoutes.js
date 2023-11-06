@@ -13,18 +13,6 @@ export const AllRoutes = () => {
         element={<Details />}
       />
       <Route
-        path="anime/popular"
-        element={<Home />}
-      />
-      <Route
-        path="anime/top"
-        element={<Home />}
-      />
-      <Route
-        path="anime/upcoming"
-        element={<Home />}
-      />
-      <Route
         path="search"
         element={<Search apiPath="search/anime" />}
       />

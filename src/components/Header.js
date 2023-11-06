@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
@@ -8,9 +10,17 @@ import Ham from '../assets/hamburger.svg';
 
 export const Header = () => {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const queryTerm = e.target.search.value;
+      e.target.reset();
+      return navigate(`/search?q=${queryTerm}`);
+    }
   
     return(
         <nav id="main-menu" className="navbar sticky-top bg-dark">
@@ -92,11 +102,11 @@ export const Header = () => {
           </ul>
         </div>
       </div>
-      <a href="index.html" className="navbar-brand">
+      <Link to="" className="navbar-brand">
         <img src={Logo} alt="Aniflix Logo" width={150} />
-      </a>
+      </Link>
     </div>
-    <form className="d-flex pt-3 pb-2">
+    <form onSubmit={handleSubmit} className="d-flex pt-3 pb-2">
       <div className="input-group me-2" id="search-here">
         <input
           type="text"

@@ -554,3 +554,483 @@ textarea {
 
 /* Top Anime */
 
+:root {
+  --bs-border-color: #3299bb;
+  --color-primary: #020d18;
+  --bs-btn-close-color: #1c85a8;
+  --slider-padding: 5rem;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+#search-here input#search::-webkit-input-placeholder {
+  color: #3299bb;
+}
+
+.form-control {
+  color: var(--bs-body-color);
+}
+
+.blue-color {
+  color: #3299bb;
+}
+
+.black-color {
+  color: black;
+}
+
+.orange-color {
+  color: #ff9900;
+}
+
+.genres a {
+  list-style: none;
+  text-decoration: none;
+  color: #ff9900;
+}
+
+.bg-color {
+  background-color: #3299bb;
+}
+
+section h4 {
+  font-size: 20px;
+}
+
+.offcanvas-header .btn-close {
+  --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%233299bb'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
+
+/* Top Animes */
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.slider {
+  --items-per-screen: 5;
+  --slider-index: 0;
+  display: flex;
+  flex-grow: 1;
+  padding: 0 0.25rem;
+  transform: translateX(calc(var(--slider-index) * -100%));
+  transition: transform 250ms ease-in-out;
+}
+
+.slider > img {
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  aspect-ratio: 16 / 9;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 350px;
+  transition: transform 300ms ease 100ms;
+}
+
+.handle {
+  border: none;
+  border-radius: 1rem;
+  flex-grow: 0;
+  width: 5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 100;
+  margin: 0.25rem 0;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 150ms ease-in-out;
+}
+
+.left-handle {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right-handle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.handle:hover,
+.handle:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 6rem;
+}
+
+.sliderContainer:hover .left-handle::after {
+  content: '\2039';
+}
+.sliderContainer:hover .right-handle::after {
+  content: '\203A';
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.sliderProgress-bar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sliderProgress-item {
+  flex: 0 0 1.5rem;
+  min-width: 1.5rem;
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.sliderProgress-item.active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.slider > img:after {
+  content: '';
+  display: block;
+  padding-top: 70%;
+}
+
+.slider:hover img {
+  transform: translateX(-25%);
+}
+
+.slider img:hover ~ img {
+  transform: translateX(25%);
+}
+
+.slider > img:hover {
+  transform: scale(1.5);
+}
+
+/* Action Animes */
+.sliderContainerAction {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.sliderAction {
+  --items-per-screen: 5;
+  --slider-index: 0;
+  display: flex;
+  flex-grow: 1;
+  margin: 0 0.25rem;
+  transform: translateX(calc(var(--slider-index) * -100%));
+  transition: transform 250ms ease-in-out;
+}
+
+.sliderAction > img {
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  aspect-ratio: 16 / 9;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 350px;
+  transition: transform 300ms ease 100ms;
+}
+
+.handleAction {
+  border: none;
+  border-radius: 1rem;
+  flex-grow: 0;
+  width: 5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 100;
+  margin: 0.25rem 0;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 150ms ease-in-out;
+}
+
+.left-handle-Action {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right-handle-Action {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.handleAction:hover,
+.handleAction:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 6rem;
+}
+
+.sliderContainerAction:hover .left-handle-Action::after {
+  content: '\2039';
+}
+.sliderContainerAction:hover .right-handle-Action::after {
+  content: '\203A';
+}
+
+.sliderProgress-bar-Action {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sliderProgress-item-Action {
+  flex: 0 0 1.5rem;
+  min-width: 1.5rem;
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.sliderProgress-item-Action.active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.sliderAction > img:after {
+  content: '';
+  display: block;
+  padding-top: 70%;
+}
+
+.sliderAction:hover img {
+  transform: translateX(-25%);
+}
+
+.sliderAction img:hover ~ img {
+  transform: translateX(25%);
+}
+
+.sliderAction > img:hover {
+  transform: scale(1.5);
+}
+
+/* Adventure Animes */
+.sliderContainerAdventure {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.sliderAdventure {
+  --items-per-screen: 5;
+  --slider-index: 0;
+  display: flex;
+  flex-grow: 1;
+  margin: 0 0.25rem;
+  transform: translateX(calc(var(--slider-index) * -100%));
+  transition: transform 250ms ease-in-out;
+}
+
+.sliderAdventure > img {
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  aspect-ratio: 16 / 9;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 350px;
+  transition: transform 300ms ease 100ms;
+}
+
+.handleAdventure {
+  border: none;
+  border-radius: 1rem;
+  flex-grow: 0;
+  width: 5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 100;
+  margin: 0.25rem 0;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 150ms ease-in-out;
+}
+
+.left-handle-Adventure {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right-handle-Adventure {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.handleAdventure:hover,
+.handleAdventure:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 6rem;
+}
+
+.sliderContainerAdventure:hover .left-handle-Adventure::after {
+  content: '\2039';
+}
+.sliderContainerAdventure:hover .right-handle-Adventure::after {
+  content: '\203A';
+}
+
+.sliderProgress-bar-Adventure {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sliderProgress-item-Adventure {
+  flex: 0 0 1.5rem;
+  min-width: 1.5rem;
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.sliderProgress-item-Adventure.active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.sliderAdventure > img:after {
+  content: '';
+  display: block;
+  padding-top: 70%;
+}
+
+.sliderAdventure:hover img {
+  transform: translateX(-25%);
+}
+
+.sliderAdventure img:hover ~ img {
+  transform: translateX(25%);
+}
+
+.sliderAdventure > img:hover {
+  transform: scale(1.5);
+}
+
+/* Comedy Animes */
+.sliderContainerComedy {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.sliderComedy {
+  --items-per-screen: 5;
+  --slider-index: 0;
+  display: flex;
+  flex-grow: 1;
+  margin: 0 0.25rem;
+  transform: translateX(calc(var(--slider-index) * -100%));
+  transition: transform 250ms ease-in-out;
+}
+
+.sliderComedy > img {
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  aspect-ratio: 16 / 9;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 350px;
+  transition: transform 300ms ease 100ms;
+}
+
+.handleComedy {
+  border: none;
+  border-radius: 1rem;
+  flex-grow: 0;
+  width: 5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 100;
+  margin: 0.25rem 0;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 150ms ease-in-out;
+}
+
+.left-handle-Comedy {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right-handle-Comedy {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.handleComedy:hover,
+.handleComedy:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 6rem;
+}
+
+.sliderContainerComedy:hover .left-handle-Comedy::after {
+  content: '\2039';
+}
+.sliderContainerComedy:hover .right-handle-Comedy::after {
+  content: '\203A';
+}
+
+.sliderProgress-bar-Comedy {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sliderProgress-item-Comedy {
+  flex: 0 0 1.5rem;
+  min-width: 1.5rem;
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.sliderProgress-item-Comedy.active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.sliderComedy > img:after {
+  content: '';
+  display: block;
+  padding-top: 70%;
+}
+
+.sliderComedy:hover img {
+  transform: translateX(-25%);
+}
+
+.sliderComedy img:hover ~ img {
+  transform: translateX(25%);
+}
+
+.sliderComedy > img:hover {
+  transform: scale(1.5);
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 38.25%;
+  height: 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

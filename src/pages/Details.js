@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 export const Details = () => {
   const params = useParams();
   const [anime, setAnime] = useState({});
-  const image = anime.images.webp.image_url;
 
   useEffect(() => {
     async function fetchAnime() {
@@ -12,7 +11,7 @@ export const Details = () => {
         `https://api.jikan.moe/v4/anime/${params.id}`
       );
       const json = await response.json();
-      setAnime(json.data);
+      setAnime(json);
       console.log(json);
     }
     fetchAnime();
@@ -28,12 +27,12 @@ export const Details = () => {
           <div className="information">
             <div className="poster">
               <img
-                src={image}
+                src={anime.data?.images?.jpg?.large_image_url}
                 alt=""
               />
             </div>
             <div className="description">
-              <h1>Anime Title</h1>
+              <h1>{anime.data?.title}</h1>
               <div className="title">
                 <button className="button title_button">
                   <i className="fa-solid fa-play" /> Watch Now
@@ -46,31 +45,39 @@ export const Details = () => {
                 <p id="sub-header-1">
                   <span className="bold">Alias: </span>
                   <span className="italic">
-                    テイルズ オブ シンフォニア THE ANIMATION{' '}
+                  {anime.data?.title_japanese}
                   </span>
                 </p>
                 <p id="sub-header-2">
                   <span className="bold">Original Airing: </span>
                   <span className="italic">
-                    June 8th, 2007 - December 21st, 2007
+                    {anime.data?.aired?.string}
                   </span>
                 </p>
                 <p id="sub-header-1">
                   <span className="bold">Genre: </span>
                   <span className="italic">
-                    Adventure, Fantasy, Psychological, Romance{' '}
+                  {anime.data?.genres ? (
+                    <span>
+                      {anime.data?.genres.map((genre) => (
+                        <span
+                          className="blue-color fst-italic"
+                          key={genre.mal_id}
+                        >
+                          {' '}
+                          {genre.name}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    ''
+                  )}
                   </span>
                 </p>
               </div>
               <div className="space">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Culpa, tempore voluptatum. Id, minus nostrum similique
-                  officiis exercitationem sequi suscipit doloremque! Natus eum
-                  provident pariatur, impedit necessitatibus illum in nesciunt
-                  consequuntur, quibusdam praesentium, unde assumenda voluptatum
-                  error explicabo at iste dolorem sunt omnis. Odio, enim
-                  sapiente! A illo mollitia distinctio fuga!
+                {anime.data?.synopsis}
                 </p>
               </div>
             </div>
@@ -120,7 +127,21 @@ export const Details = () => {
                           >
                             Studio(s):
                           </th>
-                          <td className="info-tile-data italic">ufotable</td>
+                          <td className="info-tile-data italic">{anime.data?.studios ? (
+                    <span>
+                      {anime.data?.studios.map((studio) => (
+                        <span
+                          className="blue-color fst-italic"
+                          key={studio.mal_id}
+                        >
+                          {' '}
+                          {studio.name}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    ''
+                  )}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -150,7 +171,21 @@ export const Details = () => {
                           >
                             Producer(s):{' '}
                           </th>
-                          <td className="info-tile-data italic">unknown</td>
+                          <td className="info-tile-data italic">{anime.data?.producers ? (
+                    <span>
+                      {anime.data?.producers.map((producer) => (
+                        <span
+                          className="blue-color fst-italic"
+                          key={producer.mal_id}
+                        >
+                          {' '}
+                          {producer.name}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    ''
+                  )}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -165,7 +200,21 @@ export const Details = () => {
                             Licensor:{' '}
                           </th>
                           <td className="info-tile-data italic">
-                            Discotek Media
+                          {anime.data?.licensors ? (
+                    <span>
+                      {anime.data?.licensors.map((licensor) => (
+                        <span
+                          className="blue-color fst-italic"
+                          key={licensor.mal_id}
+                        >
+                          {' '}
+                          {licensor.name}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    ''
+                  )}
                           </td>
                         </tr>
                       </tbody>
@@ -178,9 +227,9 @@ export const Details = () => {
                             className="info-tile-label"
                             scope="row"
                           >
-                            Streaming:
+                            Status:
                           </th>
-                          <td className="info-tile-data italic">Crunchyroll</td>
+                          <td className="info-tile-data italic">{anime.data?.status}</td>
                         </tr>
                       </tbody>
                     </table>
