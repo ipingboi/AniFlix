@@ -148,7 +148,7 @@ export const ActionAnimes = () => {
         {actionAnimes && actionAnimes.length ? (
   <div className="sliderAction">
     {actionAnimes.map((anime) => (
-      <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id}>
+      <Link to={`/anime/${anime.mal_id}`}>
         <img src={anime.images.jpg.image_url} alt="" />
       </Link>
     ))}

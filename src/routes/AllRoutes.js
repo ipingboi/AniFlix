@@ -13,8 +13,8 @@ export const AllRoutes = () => {
         element={<Details />}
       />
       <Route
-        path="search"
-        element={<Search apiPath="search/anime" />}
+        path="anime"
+        element={<Search />}
       />
     </Routes>
   );

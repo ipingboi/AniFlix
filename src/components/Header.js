@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 
 import Logo from '../assets/aniflix_logo.png';
-import Ham from '../assets/hamburger.svg';
+
 
 
 export const Header = () => {
@@ -19,7 +17,7 @@ export const Header = () => {
       e.preventDefault();
       const queryTerm = e.target.search.value;
       e.target.reset();
-      return navigate(`/search?q=${queryTerm}`);
+      return navigate(`/anime?q=${queryTerm}`);
     }
   
     return(

@@ -1,31 +1,37 @@
 import { useSearchParams } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
 import { Card } from '../components';
+import { Link } from 'react-router-dom';
 
-export const Search = ({ apiPath }) => {
+export const Search = () => {
   const [searchParams] = useSearchParams();
   const queryTerm = searchParams.get('q');
-  const { data: animes } = useFetch(apiPath, queryTerm);
+  const { data: animes } = useFetch(queryTerm);
+
   return (
-    <main>
-      <section className="py-7">
-        <p className="text-3xl text-gray-700 dark:text-white">
+    <div className="search-page">
+      <section>
+        <h4>
           {animes.length === 0
             ? `No result found for '${queryTerm}'`
             : `Result for '${queryTerm}'`}
-        </p>
+        </h4>
       </section>
 
-      <section className="max-w-7xl mx-auto py-7">
-        <div className="flex justify-start flex-wrap other:justify-evenly">
-          {animes.map((anime) => (
-            <Card
-              key={anime.id}
-              anime={anime}
-            />
-          ))}
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-3 col-md-6">
+              {animes.map((anime) => (
+                <Card
+                  key={anime.mal_id}
+                  anime={anime}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };

@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 
-export const useFetch = (apiPath, queryTerm = '') => {
+export const useFetch = (queryTerm = '') => {
   const [data, setData] = useState([]);
-  const url = `https://api.jikan.moe/v4/anime?=${queryTerm}`;
+  const url = `https://api.jikan.moe/v4/anime?q=${queryTerm}&sfw`;
 
   useEffect(() => {
     async function fetchAnime() {
       const response = await fetch(url);
 
       const json = await response.json();
-      setData(json.results);
+      setData(json.data);
     }
 
     fetchAnime();
