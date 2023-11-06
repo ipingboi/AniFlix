@@ -4,6 +4,14 @@ import { useParams } from 'react-router-dom';
 export const Details = () => {
   const params = useParams();
   const [anime, setAnime] = useState({});
+  const [char, setChar] = useState({});
+  const [char2, setChar2] = useState({});
+  const [char3, setChar3] = useState({});
+  const [char4, setChar4] = useState({});
+  const [char5, setChar5] = useState({});
+  const [char6, setChar6] = useState({});
+  const [char7, setChar7] = useState({});
+  const [char8, setChar8] = useState({});
 
   useEffect(() => {
     async function fetchAnime() {
@@ -12,9 +20,74 @@ export const Details = () => {
       );
       const json = await response.json();
       setAnime(json);
-      console.log(json);
+    }
+
+    async function fetchChar() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character = await response.json();
+      setChar(character.data[0]);
+    }
+    async function fetchChar2() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character2 = await response.json();
+      setChar2(character2.data[1]);
+    }
+    async function fetchChar3() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character3 = await response.json();
+      setChar3(character3.data[2]);
+    }
+    async function fetchChar4() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character4 = await response.json();
+      setChar4(character4.data[3]);
+    }
+    async function fetchChar5() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character5 = await response.json();
+      setChar5(character5.data[4]);
+    }
+    async function fetchChar6() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character6 = await response.json();
+      setChar6(character6.data[5]);
+    }
+    async function fetchChar7() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character7 = await response.json();
+      setChar7(character7.data[6]);
+    }
+    async function fetchChar8() {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${params.id}/characters`
+      );
+      const character8 = await response.json();
+      setChar8(character8.data[7]);
     }
     fetchAnime();
+    fetchChar();
+    fetchChar2();
+    fetchChar3();
+    fetchChar4();
+    fetchChar5();
+    fetchChar6();
+    fetchChar7();
+    fetchChar8();
+    
   }, [params.id]);
 
   return (
@@ -237,255 +310,80 @@ export const Details = () => {
                 </div>
               </div>
               <h2>CAST</h2>
-              <div className="project-tile">
-                <div className="sub-header center">
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/3/204305.jpg"
-                        alt="Picture of Lloyd Irving from Tales of Symphonia The Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Lloyd Irving</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Katsuyuki Konishi{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/6/73937.jpg"
-                        alt="Picture of Colette Brunel from Tales of Symphonia The Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Colette Brunel</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Nana Mizuki{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/16/94565.jpg"
-                        alt="Genius Sage from Tales of Symphonia The Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Genius Sage</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Ai Orikasa{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/7/92759.jpg"
-                        alt='Picture of Refill "Raine" Sage from Tales of Symphonia The Animation'
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">
-                            Refill "Raine" Sage
-                          </td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Yumi Touma{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/16/93369.jpg"
-                        alt="Picture of Zelos Wilder from Tales of Symphonia the Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Zelos Wilder</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Masaya Onosaka{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/6/204303.jpg"
-                        alt="Picture of Shihna Fujibayashi from Tales of Symphonia the Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Sheena Fujibayashi</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Akemi Okamura{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/10/92269.jpg"
-                        alt="Picture of Presea Combatir from Tales of Symphonia the Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Presea Combatir</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Houko Kuwashima{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/4/204301.jpg"
-                        alt="Picture of Regal Bryant from Tales of Symphonia the Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Regal Bryant</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Akio Ootsuka{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
-                  <div className="cast-flex">
-                    <div className="cast-image">
-                      <img
-                        src="https://cdn.myanimelist.net/images/characters/5/92752.jpg"
-                        alt="Picture of Kratos Aurion from Tales of Symphonia the Animation"
-                      />
-                    </div>
-                    <table className="info-tile-cast">
-                      <tbody>
-                        <tr>
-                          <td className="cast-name bold">Kratos Aurion</td>
-                        </tr>
-                        <tr>
-                          <th className="voice-cast-header">Actors</th>
-                        </tr>
-                        <tr>
-                          <td className="info-tile-data italic">
-                            Fumihiko Tachiko{' '}
-                            <span className="italic small-font">
-                              (Japanese)
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="borderClass" />
+              <div className='row justify-content-evenly text-center blue-color '>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char.character?.name}</h5>
+                  <p className="card-text">
+                  {char.role}
+                  </p>
                 </div>
               </div>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char2.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char2.character?.name}</h5>
+                  <p className="card-text">
+                  {char2.role}
+                  </p>
+                </div>
+              </div>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char3.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char3.character?.name}</h5>
+                  <p className="card-text">
+                  {char3.role}
+                  </p>
+                </div>
+              </div>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char4.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char4.character?.name}</h5>
+                  <p className="card-text">
+                  {char4.role}
+                  </p>
+                </div>
+              </div>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char5.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char5.character?.name}</h5>
+                  <p className="card-text">
+                  {char5.role}
+                  </p>
+                </div>
+              </div>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char6.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char6.character?.name}</h5>
+                  <p className="card-text">
+                  {char6.role}
+                  </p>
+                </div>
+              </div>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char7.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char7.character?.name}</h5>
+                  <p className="card-text">
+                  {char7.role}
+                  </p>
+                </div>
+              </div>
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={char8.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{char8.character?.name}</h5>
+                  <p className="card-text">
+                  {char8.role}
+                  </p>
+                </div>
+              </div>
+            </div>
             </div>
           </section>
 
