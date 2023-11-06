@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Details, Home, Search, Genres } from '../pages';
+import { Details, Home, Search, Genres, TopAnime, UpcomingSeason } from '../pages';
 
 export const AllRoutes = () => {
   return (
@@ -19,6 +19,14 @@ export const AllRoutes = () => {
       <Route
         path="anime?genres"
         element={<Genres />}
+      />
+      <Route
+        path="top/anime"
+        element={<TopAnime />}
+      />
+      <Route
+        path="seasons/upcoming"
+        element={<UpcomingSeason />}
       />
     </Routes>
   );

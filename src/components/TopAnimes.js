@@ -121,7 +121,7 @@ export const TopAnimes = () => {
     fetchTopAnimes();
     setTimeout(() => {
       fetchTopAnimes();
-    }, 5000);
+    }, 2000);
   }, []);
 
   return (
@@ -141,13 +141,13 @@ export const TopAnimes = () => {
           &#8249;
         </button>
         {topAnimes && topAnimes.length > 0 ? (
-          <div className="slider">          
-            {topAnimes.map((anime) => (   
+          <div className="slider">
+            {topAnimes.map((anime) => (
               <img
                 key={anime.mal_id}
                 src={anime.images.webp.image_url}
                 alt={anime.title}
-              />              
+              />
             ))}
           </div>
         ) : (

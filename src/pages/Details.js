@@ -310,7 +310,7 @@ export const Details = () => {
                 </div>
               </div>
               <h2>CAST</h2>
-              <div className='row justify-content-evenly text-center blue-color '>
+              <div className='row justify-content-evenly text-center blue-color'>
               <div className="card" style={{ width: "18rem" }}>
                 <img src={char.character?.images?.jpg?.image_url} className="card-img-top" alt="..." />
                 <div className="card-body">

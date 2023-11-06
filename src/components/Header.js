@@ -49,6 +49,22 @@ export const Header = () => {
             aria-label="Close"
           />
         </div>
+        <ul className="genres">
+            <li className="pb-1">
+              <Link
+                to="top/anime"
+              >
+                <h4>Top Anime</h4>
+              </Link>
+            </li>
+            <li className="pb-1">
+              <Link
+                to="seasons/upcoming"
+              >
+                <h4>Upcoming Seasons</h4>
+              </Link>
+            </li>
+            </ul>
         <div className="offcanvas-body">
           <h5 className="blue-color">Genres</h5>
           <ul className="genres">
