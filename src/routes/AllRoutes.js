@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Details, Home, Search } from '../pages';
+import { Details, Home, Search, Genres } from '../pages';
 
 export const AllRoutes = () => {
   return (
@@ -15,6 +15,10 @@ export const AllRoutes = () => {
       <Route
         path="anime"
         element={<Search />}
+      />
+      <Route
+        path="anime?genres"
+        element={<Genres />}
       />
     </Routes>
   );

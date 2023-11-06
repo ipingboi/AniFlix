@@ -4,13 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Logo from '../assets/aniflix_logo.png';
 
-
-
 export const Header = () => {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -59,43 +53,61 @@ export const Header = () => {
           <h5 className="blue-color">Genres</h5>
           <ul className="genres">
             <li className="pb-1">
-              <a
-                href="https://myanimelist.net/anime/genre/1/Action"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="anime?genres=1"
               >
                 Action
-              </a>
+              </Link>
             </li>
             <li className="pb-1">
-              <a href="#">Adventure</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Adventure</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Avant Garde</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Avant Garde</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Award Winning</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Award Winning</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Boys Love</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Boys Love</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Comedy</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Comedy</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Drama</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Drama</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Fantasy</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Fantasy</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Girl's Love</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Girl's Love</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Gourmet</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Gourmet</Link>
             </li>
             <li className="pb-1">
-              <a href="#">Horror</a>
+              <Link
+                to="anime/genre/${anime.mal_id}"
+              >Horror</Link>
             </li>
           </ul>
         </div>

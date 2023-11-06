@@ -6,3 +6,4 @@ export { AdventureAnimes } from './AdventureAnimes';
 export { ComedyAnimes } from './ComedyAnimes';
 export { ScrollToTop } from './ScrollToTop';
 export { Card } from './Card';
+export { ActionCards } from './ActionCards';

@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 
-export const Card = ({ anime }) => {
-  const image = anime.images?.jpg?.image_url;
+export const ActionCards = ({ actionAnimes }) => {
+  const image = actionAnimes.images?.jpg?.image_url;
 
   return (
     <div
       className="card"
       style={{ width: '18rem' }}
     >
-      <Link to={`/anime/${anime.mal_id}`}>
+      <Link to={`/anime?genres=1}`}>
         <img
           className="card-img-top"
           src={image}
@@ -17,8 +17,8 @@ export const Card = ({ anime }) => {
       </Link>
       <div className="card-body text-center">
         <p className="card-text">
-          <h5>{anime.title}</h5>
-          <i className="bi bi-star-fill"><span> {anime.score} / 10</span> </i>
+          <h5>{actionAnimes.title}</h5>
+          <i className="bi bi-star-fill"><span> {actionAnimes.score} / 10</span> </i>
            
         </p>
       </div>
